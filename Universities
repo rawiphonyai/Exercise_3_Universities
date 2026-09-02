@@ -1,0 +1,73 @@
+///////////
+/**
+ * @author Rawiphon Yaiying 6813114
+ * @author Asna Sama 6813117
+ */
+///////////
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class University implements Comparable<University> {  
+    private String name, initials; 
+    private int foundedYear, students, fulltimeTeachers;
+
+    public University(String name, String initials, int foundedYears, int students, int fulltimeTeachers){
+        this.name = name;
+        this.initials = initials;
+        this.foundedYear = foundedYears;
+        this.students = students;
+        this.fulltimeTeachers = fulltimeTeachers;
+    }
+
+    public University(String initials ){
+        this.initials = initials;
+    }
+
+    @Override 
+    public int compareTo(University other)  { 
+        if(this.students != other.students){
+            return other.students - this.students;
+        }
+        if(this.fulltimeTeachers != other.fulltimeTeachers){
+            return other.fulltimeTeachers - this.fulltimeTeachers;
+        }
+        return this.name.compareToIgnoreCase(other.name);
+     }    // change code (see 2.2)  
+
+    @Override 
+    public boolean equals(Object param)     {
+        if(param instanceof University){
+            University other = (University) param;
+            return this.initials.equalsIgnoreCase(other.initials);
+        }
+        return false;
+    }  // change code (see 2.4)
+}  
+
+    public String getName() {return name;}
+    public String getInitials() {return initials}
+    public int getFoundYears() {return foundedYear;}
+    public int getStudents() {return students;}
+    public int getFulltimeTeachers() {return fulltimeTeachers;}
+
+public class Ex3Main { 
+    protected ArrayList<University> allUniversities; 
+    public static void main(String[] args) { 
+        // Create object Ex3Main & use this object to call methods for tasks 2.1-2.5 
+    } 
+    public void readFile()           { /* add your code for task 2.1 */ } 
+    public void taskSort()           { /* add your code for task 2.2 */ }
+    public void taskMenu()           { /* add your code for task 2.3 */ }
+    public void taskSearch()         { /* add your code for task 2.4 */ } 
+    public void taskFilter()         { /* add your code for task 2.5 */ }
+} 
+
+  
+   
+   
+  
+  
